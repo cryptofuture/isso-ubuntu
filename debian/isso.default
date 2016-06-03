@@ -1,0 +1,7 @@
+# Configuration file for isso
+
+# Options to pass to isso:
+#   -b binds address to listen, ex. '-b localhost:8080' binds to port 
+#   --log-file sets log file location 
+# Consider read/write rights if you want to change sock/log file location
+GUNICORN_ARGS="-b unix:/run/isso/isso.sock --log-file /var/log/isso/isso.log"

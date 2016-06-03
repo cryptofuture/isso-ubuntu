@@ -1,0 +1,15 @@
+[Unit]
+Description=lightweight Disqus alternative
+
+[Service]
+User=isso
+Environment="ISSO_SETTINGS=/etc/isso.conf"
+EnvironmentFile=-/etc/default/isso
+ExecStart=/usr/bin/gunicorn $GUNICORN_ARGS --preload isso.run
+
+# ensures that the service process and all its children can never gain new
+# privileges.
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
