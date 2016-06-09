@@ -1,5 +1,6 @@
 [Unit]
 Description=lightweight Disqus alternative
+After=network.target nginx.service
 
 [Service]
 User=isso
